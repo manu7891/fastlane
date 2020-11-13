@@ -350,7 +350,7 @@ module FastlaneCore
     end
 
     def build_xcodebuild_resolvepackagedependencies_command
-      command = "xcodebuild -resolvePackageDependencies #{xcodebuild_parameters.join(' ')}"
+      command = "xcodebuild -resolvePackageDependencies #{xcodebuild_parameters.join(' ')} -scmProvider system"
       command += " 2> /dev/null" if xcodebuild_suppress_stderr
       command
     end
